@@ -19,16 +19,22 @@ def delete_book(book_id):
 def add_book():
     return render_template("new_book.jinja")
 
+#I started writing the below function but kept going round in circles and couldn't concentrate any longer
+#so I called it a day.
 @books_blueprint.route("/books", methods=['POST'])
 def save_book():
     title = request.form['title']
     author_name = request.form['author_name']
 
+    author_of_book = None
+
     author_list = author_repo.select_all()
 
     for author in author_list:
         if author.name == author_name:
-            author_id =  
+            author_of_book = author
+
+
 
 
 

@@ -5,6 +5,7 @@ def save(author):
     sql = "INSERT INTO authors (name) VALUES (%s) RETURNING *"
     values = [author.name]
     results = run_sql(sql, values)
+    # printed the folowing for debugging
     # print("THIS IS OUR RESULTS", results)
     id = results[0]['id']
     author.id = id
